@@ -112,6 +112,13 @@
       box-shadow: 0 6px 15px rgba(255, 204, 0, 0.4);
     }
 
+    .gallery-caption {
+      text-align: center;
+      font-size: 0.9em;
+      color: #ddd;
+      margin-top: 5px;
+    }
+
     /* Bookshelf Styles */
     .bookshelf {
       display: flex;
@@ -239,6 +246,7 @@
       header p { font-size: 1.2em; }
       .section h2 { font-size: 1.8em; }
       .book { width: 100%; }
+      .gallery img { height: 150px; }
     }
   </style>
 </head>
@@ -258,35 +266,67 @@
   <div class="section">
     <h2>Innovative Initiatives</h2>
     <ul>
-      <li><strong>Nsaba Computer Center:</strong> Established in the early 2000s, providing internet access and digital literacy to the community.</li>
-      <li><strong>Science Foundation for Girl Child Education:</strong> Pioneered STEM education for girls, empowering future generations.</li>
+      <li><strong>Nsaba Computer Center (Early 2000s):</strong> Launched a pioneering digital hub in Nsaba, Ghana, providing internet access and computer literacy to empower the community.</li>
+      <li><strong>Science Foundation for Girl Child Education:</strong> Championed STEM education for young girls, fostering equality and opportunity in scientific fields.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Published Works</h2>
+    <ul>
+      <li><strong>Books:</strong> Authored 4 seminal works, including <em>20th Century Art of Africa</em> (1986, revised 1993) and <em>Traditional Art of Ghana</em> (1994).</li>
+      <li><strong>Journals:</strong> Published 12 peer-reviewed articles exploring African cultural expression.</li>
+      <li><strong>Catalogues:</strong> Created 30 exhibition catalogues preserving African visual heritage.</li>
     </ul>
   </div>
 
   <div class="section">
     <h2>Bookshelf</h2>
+    <p>A curated collection of Prof. Fosu’s written legacy, showcasing his contributions to African art scholarship.</p>
     <div class="bookshelf">
       <div class="book">
         <h3>20th Century Art of Africa</h3>
-        <p>Published in 1986, revised 1993 - A seminal work exploring African artistic evolution.</p>
+        <p>Published in 1986, revised 1993 - A definitive exploration of African artistic evolution in the modern era.</p>
       </div>
       <div class="book">
         <h3>Traditional Art of Ghana</h3>
-        <p>Published in 1994 - A deep dive into Ghanaian cultural heritage.</p>
+        <p>Published in 1994 - A vibrant study of Ghanaian cultural heritage and artistic traditions.</p>
       </div>
       <div class="book">
-        <h3>Articles & Newsletters</h3>
-        <p>Collection of 12 peer-reviewed articles and various newsletters penned by Prof. Fosu.</p>
+        <h3>Scholarly Articles</h3>
+        <p>A collection of 12 peer-reviewed papers published in leading journals, delving into African aesthetics.</p>
+      </div>
+      <div class="book">
+        <h3>Exhibition Catalogues</h3>
+        <p>30 meticulously crafted catalogues documenting African art exhibitions worldwide.</p>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <h2>Photo Album</h2>
+    <h2>Seminars & Lectures</h2>
+    <ul>
+      <li>Presented 12 scholarly papers at international seminars across the USA, Europe, and Africa, shaping global discourse on African art.</li>
+      <li>Delivered 20 captivating lectures at prestigious institutions, inspiring students and scholars worldwide.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Photo Album - In Memory</h2>
+    <p>A visual tribute to Prof. Kojo Fosu, capturing moments from his extraordinary life and work.</p>
     <div class="gallery">
-      <img src="prof_photo1.jpg" alt="Prof. Kojo Fosu at work">
-      <img src="prof_photo2.jpg" alt="Prof. Kojo Fosu teaching">
-      <img src="prof_photo3.jpg" alt="Prof. Kojo Fosu with students">
+      <div>
+        <img src="prof_photo1.jpg" alt="Prof. Kojo Fosu at an exhibition">
+        <div class="gallery-caption">Curating an exhibition in Ghana</div>
+      </div>
+      <div>
+        <img src="prof_photo2.jpg" alt="Prof. Kojo Fosu lecturing">
+        <div class="gallery-caption">Lecturing at a university</div>
+      </div>
+      <div>
+        <img src="prof_photo3.jpg" alt="Prof. Kojo Fosu with students">
+        <div class="gallery-caption">Mentoring students</div>
+      </div>
       <!-- Add more photos as needed -->
     </div>
   </div>
@@ -294,15 +334,15 @@
   <div class="section">
     <h2>Curatorial Work</h2>
     <ul>
-      <li>Curated 15 transformative art exhibitions in the USA, Ghana, and Nigeria</li>
-      <li>Produced and hosted 5 acclaimed TV series on African Arts & Culture (Channel 9, Washington DC, 1974–1976)</li>
+      <li>Curated 15 transformative art exhibitions in the USA, Ghana, and Nigeria, bringing African art to global audiences.</li>
+      <li>Produced and hosted 5 acclaimed TV series on African Arts & Culture (Channel 9, Washington DC, 1974–1976).</li>
     </ul>
   </div>
 
   <div class="section">
     <h2>Legacy</h2>
     <p>
-      Prof. Kojo Fosu’s tireless efforts elevated African art from marginalization to a celebrated field of study. His scholarship, alongside his community initiatives, inspired generations of artists, historians, educators, and young minds worldwide.
+      Prof. Kojo Fosu’s tireless efforts elevated African art from marginalization to a celebrated field of study. His scholarship, community initiatives like the Nsaba Computer Center, and advocacy for girls’ education inspired generations of artists, historians, educators, and innovators worldwide.
     </p>
   </div>
 
@@ -350,7 +390,6 @@
       modal.style.display = 'none';
     }
 
-    // Close modal when clicking outside the image
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
