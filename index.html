@@ -93,7 +93,6 @@
       top: 2px;
     }
 
-    /* Photo Album Styles */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -123,7 +122,6 @@
       margin-top: 5px;
     }
 
-    /* Bookshelf Styles */
     .bookshelf {
       display: flex;
       flex-wrap: wrap;
@@ -156,7 +154,45 @@
       color: #ddd;
     }
 
-    /* Modal for Fullscreen Images */
+    .book a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .book a:hover {
+      text-decoration: underline;
+    }
+
+    .quotes-section {
+      text-align: center;
+    }
+
+    .quote-display {
+      font-size: 1.3em;
+      color: #ddd;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    .quote-btn {
+      padding: 10px 20px;
+      font-size: 1em;
+      color: #111;
+      background: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quote-btn:hover {
+      background: #e6b800;
+      transform: scale(1.05);
+    }
+
     .modal {
       display: none;
       position: fixed;
@@ -259,6 +295,7 @@
       header p { font-size: 1em; }
       .section { padding: 0 15px; }
       .museum-btn { font-size: 0.9em; padding: 10px 25px; }
+      .quote-display { font-size: 1.1em; }
     }
   </style>
 </head>
@@ -307,7 +344,6 @@
     </p>
   </div>
 
-  <!-- New Sections Added -->
   <div class="section">
     <h2>Innovative Initiatives</h2>
     <ul>
@@ -322,19 +358,31 @@
       <div class="book">
         <h3>20th Century Art of Africa</h3>
         <p>1986, revised 1993 - A seminal work on African art in the modern era.</p>
+        <a href="#" target="_blank">Download PDF</a>
       </div>
       <div class="book">
         <h3>Traditional Art of Ghana</h3>
         <p>1994 - A comprehensive study of Ghanaian artistic traditions.</p>
+        <a href="#" target="_blank">Download PDF</a>
       </div>
       <div class="book">
         <h3>Journals</h3>
         <p>12 peer-reviewed articles exploring African cultural expression.</p>
+        <a href="#" target="_blank">Download PDF</a>
       </div>
       <div class="book">
         <h3>Catalogues</h3>
         <p>30 exhibition catalogues preserving African visual heritage.</p>
+        <a href="#" target="_blank">Download PDF</a>
       </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Prof. Kojo Fosu Quotes</h2>
+    <div class="quotes-section">
+      <div class="quote-display" id="quoteDisplay">"Click 'Begin Wise Sayings' to start."</div>
+      <button class="quote-btn" id="quoteBtn">Begin Wise Sayings</button>
     </div>
   </div>
 
@@ -353,7 +401,6 @@
         <img src="prof_photo3.jpg" alt="Prof. Kojo Fosu with students">
         <div class="gallery-caption">With students</div>
       </div>
-      <!-- Add more photos as needed -->
     </div>
   </div>
 
@@ -365,7 +412,6 @@
     Crafted with pride by Kofi Fosu (Cosmos Coderr) | Honoring a Legendary Legacy
   </footer>
 
-  <!-- Modal for Fullscreen Images -->
   <div class="modal" id="imageModal">
     <span class="modal-close" onclick="closeModal()">×</span>
     <img id="modalImage" src="" alt="Fullscreen Image">
@@ -403,6 +449,52 @@
 
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
+    });
+
+    // Quotes functionality
+    const quotes = [
+      "Wo tsi yɛ cocoa dua – Your brain is a cocoa tree that grows as long as you feed it with what it needs.",
+      "The past is a canvas; paint it with lessons for the future.",
+      "Art is the heartbeat of a culture, pulsing through time.",
+      "Wisdom is the root, knowledge the branches – nurture both.",
+      "A people without history are like a tree without roots.",
+      "Every stroke of the artist’s hand tells a story of the soul.",
+      "To understand art is to listen to the whispers of ancestors.",
+      "Growth comes to those who plant seeds in fertile minds.",
+      "The beauty of Africa lies in its unyielding spirit.",
+      "Education is the key that unlocks the treasure of heritage.",
+      "A mind open to learning is a sky open to stars.",
+      "Tradition is not a chain, but a bridge to tomorrow.",
+      "Art speaks where words fail.",
+      "The wise man builds his house on the rock of culture.",
+      "To create is to breathe life into the invisible.",
+      "A nation’s wealth is measured in its stories, not its gold.",
+      "The artist sees what the eyes of others overlook.",
+      "Knowledge shared is a flame multiplied.",
+      "In every carving lies a lesson, in every color a truth.",
+      "The future belongs to those who honor the past."
+    ];
+
+    const quoteDisplay = document.getElementById('quoteDisplay');
+    const quoteBtn = document.getElementById('quoteBtn');
+    let intervalId = null;
+
+    function shuffleQuotes() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteDisplay.textContent = quotes[randomIndex];
+    }
+
+    quoteBtn.addEventListener('click', () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+        quoteBtn.textContent = 'Begin Wise Sayings';
+        quoteDisplay.textContent = "Click 'Begin Wise Sayings' to start.";
+      } else {
+        shuffleQuotes();
+        intervalId = setInterval(shuffleQuotes, 10000);
+        quoteBtn.textContent = 'Stop Wise Sayings';
+      }
     });
   </script>
 </body>
