@@ -93,6 +93,38 @@
       top: 2px;
     }
 
+    /* Museum Button Styles (Now Above Footer) */
+    .museum-cta {
+      text-align: center;
+      padding: 40px 20px;
+      background: #222;
+      border-top: 1px solid #ffcc00;
+      border-bottom: 1px solid #ffcc00;
+    }
+
+    .museum-btn {
+      display: inline-block;
+      padding: 15px 40px;
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #111;
+      background: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+    }
+
+    .museum-btn:hover {
+      background: #e6b800;
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+    }
+
+    /* Footer Styles (Now with the Crafted Text) */
     footer {
       text-align: center;
       padding: 50px 20px;
@@ -111,35 +143,6 @@
       height: 2px;
       background: #ffcc00;
       transform: translateX(-50%);
-    }
-
-    /* New Museum Button Styles */
-    .museum-cta {
-      text-align: center;
-      padding: 40px 20px;
-      background: #222;
-      border-top: 1px solid #ffcc00;
-    }
-
-    .museum-btn {
-      display: inline-block;
-      padding: 15px 40px;
-      font-size: 1.2em;
-      font-weight: 700;
-      color: #ffcc00;
-      background: #111;
-      border: 2px solid #ffcc00;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .museum-btn:hover {
-      background: #ffcc00;
-      color: #111;
-      transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5);
     }
 
     @keyframes fadeIn {
@@ -212,13 +215,13 @@
     </p>
   </div>
 
+  <div class="museum-cta">
+    <a href="https://onetwo346.github.io" class="museum-btn">Enter Afrisu Art Museum</a>
+  </div>
+
   <footer>
     Crafted with pride by Kofi Fosu (Cosmos Coderr) | Honoring a Legendary Legacy
   </footer>
-
-  <div class="museum-cta">
-    <a href="#" class="museum-btn" id="museumLink">Enter Afrisu Art Museum</a>
-  </div>
 
   <script>
     // Scroll animation for sections
@@ -232,14 +235,6 @@
     }, { threshold: 0.2 });
 
     sections.forEach(section => observer.observe(section));
-
-    // Museum link placeholder - update with your link
-    const museumLink = document.getElementById('museumLink');
-    museumLink.addEventListener('click', (e) => {
-      e.preventDefault(); // Prevents default until you add the real link
-      alert('Please provide the Afrisu Art Museum link to activate this feature!');
-      // Replace the alert with: window.location.href = 'YOUR_LINK_HERE';
-    });
   </script>
 </body>
 </html>
