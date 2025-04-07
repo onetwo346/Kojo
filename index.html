@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prof. Kojo Fosu - African Art Legacy</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
   <style>
     * {
       margin: 0;
@@ -505,7 +504,7 @@
       .section h2 { font-size: 1.8em; }
       .section p, .section ul { font-size: 1em; }
       .book { width: 100%; }
-      .gallery img { height: 150px; }
+      .gallery-item img { height: 150px; }
       .album-container {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       }
@@ -581,28 +580,28 @@
     <h2>Bookshelf</h2>
     <div class="bookshelf">
       <div class="book">
-        <img src="book-cover-1.jpg" alt="20th Century Art of Africa" class="book-cover">
+        <img src="book-cover-placeholder.jpg" alt="20th Century Art of Africa" class="book-cover">
         <h3>20th Century Art of Africa</h3>
         <p>1986, revised 1993 - A seminal work on African art in the modern era.</p>
         <button class="pdf-btn" onclick="viewPDF('20th-century-art-of-africa.pdf')">View PDF</button>
         <iframe class="pdf-viewer" id="pdf-viewer-1" frameborder="0"></iframe>
       </div>
       <div class="book">
-        <img src="book-cover-2.jpg" alt="Traditional Art of Ghana" class="book-cover">
+        <img src="book-cover-placeholder.jpg" alt="Traditional Art of Ghana" class="book-cover">
         <h3>Traditional Art of Ghana</h3>
         <p>1994 - A comprehensive study of Ghanaian artistic traditions.</p>
         <button class="pdf-btn" onclick="viewPDF('traditional-art-of-ghana.pdf')">View PDF</button>
         <iframe class="pdf-viewer" id="pdf-viewer-2" frameborder="0"></iframe>
       </div>
       <div class="book">
-        <img src="book-cover-3.jpg" alt="Journals Collection" class="book-cover">
+        <img src="book-cover-placeholder.jpg" alt="Journals Collection" class="book-cover">
         <h3>Journals</h3>
         <p>12 peer-reviewed articles exploring African cultural expression.</p>
         <button class="pdf-btn" onclick="viewPDF('journals.pdf')">View PDF</button>
         <iframe class="pdf-viewer" id="pdf-viewer-3" frameborder="0"></iframe>
       </div>
       <div class="book">
-        <img src="book-cover-4.jpg" alt="Exhibition Catalogues" class="book-cover">
+        <img src="book-cover-placeholder.jpg" alt="Exhibition Catalogues" class="book-cover">
         <h3>Catalogues</h3>
         <p>30 exhibition catalogues preserving African visual heritage.</p>
         <button class="pdf-btn" onclick="viewPDF('catalogues.pdf')">View PDF</button>
@@ -623,19 +622,19 @@
     <h2>Photo Albums</h2>
     <div class="album-container">
       <div class="album" onclick="openAlbum('exhibitions', 'Exhibitions')">
-        <img src="album-cover-1.jpg" alt="Exhibitions" class="album-cover">
+        <img src="album-cover-placeholder.jpg" alt="Exhibitions" class="album-cover">
         <div class="album-title">Exhibitions</div>
       </div>
       <div class="album" onclick="openAlbum('lectures', 'Lectures')">
-        <img src="album-cover-2.jpg" alt="Lectures" class="album-cover">
+        <img src="album-cover-placeholder.jpg" alt="Lectures" class="album-cover">
         <div class="album-title">Lectures</div>
       </div>
       <div class="album" onclick="openAlbum('personal', 'Personal Moments')">
-        <img src="album-cover-3.jpg" alt="Personal Moments" class="album-cover">
+        <img src="album-cover-placeholder.jpg" alt="Personal Moments" class="album-cover">
         <div class="album-title">Personal Moments</div>
       </div>
       <div class="album" onclick="openAlbum('awards', 'Awards & Honors')">
-        <img src="album-cover-4.jpg" alt="Awards & Honors" class="album-cover">
+        <img src="album-cover-placeholder.jpg" alt="Awards & Honors" class="album-cover">
         <div class="album-title">Awards & Honors</div>
       </div>
     </div>
@@ -669,8 +668,6 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
   <script>
     // Scroll animation for sections
     const sections = document.querySelectorAll('.section');
